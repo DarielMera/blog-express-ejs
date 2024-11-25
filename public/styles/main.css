@@ -1,0 +1,42 @@
+/*
+#A2D2DF
+#F6EFBD
+#E4C087
+#BC7C7C
+*/
+
+   
+*,*::before,*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-bg-color: #F6EFBD;
+    --main-text-color: #E4C087;
+    --nav-footer-bg-color: #A2D2DF;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../images/notes.jpg") no-repeat;
+    background-size: contain;
+    opacity: 0.2;
+  }
+  
+
+

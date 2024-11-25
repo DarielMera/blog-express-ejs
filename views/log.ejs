@@ -1,0 +1,56 @@
+<!-- ==========  ACCORDION ========== -->
+<div class="container-fluid accordion accordion-flush" id="accordionFlushExample">
+    <% if (entries.length > 0) { %>
+      <% entries.forEach((entry, index) => { %>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+              <div class="entry1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse<%= index %>" aria-expanded="false" aria-controls="flush-collapse<%= index %>">
+              <% if (entry.title) { %>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="<%=index%>" 
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Log#
+                            </label>
+                            <%= index + 1%>
+                            <span class="fs-5 mx-5 text-muted"><%= entry.timestamp %></span>
+                            <span id="title-holder<%=index%>" class="fs-3 mx-5 text-warning"><%= entry.title %></span>
+                        </div>
+                        <% } else { %>
+                            <span class="fs-6 text-muted">Title!</span>
+                            <% } %>
+                        </button>
+                    </div>
+                    <div class="entry2">
+                    </h2>
+                    <div id="flush-collapse<%= index %>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <% if (entry.story) { %>
+                                <span id="story-holder<%=index%>" class="fs-6"><%= entry.story %></span>
+                                <% } else { %>
+                                    <span class="fs-6 text-muted">Your story!</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                        <% } else { %>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    <span class="fs-6 text-muted">No entries available</span>
+                                </button>
+                            </div>
+                            </h2>
+                        </div>
+                        <% } %>
+    <div class="text-secondary fs-6 mt-5">*Select log to edit</div>                
+    <button id="edit-button-title" class="btn btn-warning mt-1" type="button">Edit title</button>
+    <button id="edit-button-story" class="btn btn-warning mt-1" type="button">Edit story</button>
+    <button id="delete-button" class="btn btn-danger mt-1" type="button">Delete</button>
+    <!-- <button id="save-button" class="btn btn-primary mt-1" type="button">Save</button> -->
+
+  </div>
+  

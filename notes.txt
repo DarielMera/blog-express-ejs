@@ -1,0 +1,20 @@
+https://colorhunt.co/palettes/summer
+
+colors :
+lightblue
+lightkaki
+lightmustard
+lighgtpurple
+
+#A2D2DF
+#F6EFBD
+#E4C087
+#BC7C7C
+
+
+    <%- include('log', {locals.title, }) %>
+
+
++ timestamp: ${new Date().toLocaleString()}`
+
+  <%=title%>

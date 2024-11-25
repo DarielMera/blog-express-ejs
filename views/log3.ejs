@@ -1,0 +1,39 @@
+<!-- ==========  ACCORDION ========== -->
+<div class="container-fluid accordion accordion-flush" id="accordionFlushExample">
+    <% if (entries.length > 0) { %>
+      <% entries.forEach((entry, index) => { %>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapse<%= index %>" aria-expanded="false" aria-controls="flush-collapse<%= index %>">
+              <% if (entry.title) { %>
+                <span class="fs-5 mx-5 text-muted"><%= entry.timestamp %></span>
+                <span class="fs-3 mx-5 text-warning"><%= entry.title %></span>
+              <% } else { %>
+                <span class="fs-6 text-muted">Title!</span>
+              <% } %>
+            </button>
+          </h2>
+          <div id="flush-collapse<%= index %>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <% if (entry.story) { %>
+                <span class="fs-6"><%= entry.story %></span>
+              <% } else { %>
+                <span class="fs-6 text-muted">Your story!</span>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            <span class="fs-6 text-muted">No entries available</span>
+          </button>
+        </h2>
+      </div>
+    <% } %>
+  </div>
+  
